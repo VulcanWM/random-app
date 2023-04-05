@@ -4,7 +4,7 @@ import {
   Text as DefaultText,
   useColorScheme,
   View as DefaultView, 
-  Pressable as DefaultPressable
+  TouchableOpacity as DefaultTouchableOpacity
 } from "react-native";
 
 import Colors from "../constants/Colors";
@@ -37,12 +37,12 @@ export function View(props) {
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }
 
-export function Pressable(props) {
+export function TouchableOpacity(props) {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const backgroundColor = useThemeColor(
     { light: lightColor, dark: darkColor },
     "background"
   );
 
-  return <DefaultPressable style={[{ backgroundColor }, style]} {...otherProps} />;
+  return <DefaultTouchableOpacity style={[{ backgroundColor }, style]} {...otherProps} />;
 }

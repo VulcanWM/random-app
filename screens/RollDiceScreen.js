@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { Text, View, Pressable } from "../components/Themed";
+import { Text, View, TouchableOpacity } from "../components/Themed";
 import { useState } from "react"
 
 export default function TabOneScreen() {
@@ -14,9 +14,9 @@ export default function TabOneScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Roll a Dice</Text>
       <Text>{'\n'}</Text>
-      <Pressable lightColor="black" darkColor="white" style={styles.button} onPress={reroll}>
+      <TouchableOpacity lightColor="black" darkColor="white" style={styles.button} onPress={reroll}>
         <Text lightColor="white" darkColor="black" style={styles.text}>Reroll dice</Text>
-      </Pressable>
+      </TouchableOpacity>
       <Text>{'\n'}</Text>
       <View style={styles.square}>
         <Text style={styles.diceNumber}>{randomNumber}</Text>

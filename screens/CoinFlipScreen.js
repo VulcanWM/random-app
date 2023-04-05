@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { Text, View, Pressable } from "../components/Themed";
+import { Text, View, TouchableOpacity } from "../components/Themed";
 import { useState } from "react"
 
 export default function TabTwoScreen() {
@@ -15,9 +15,9 @@ export default function TabTwoScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Flip a Coin</Text>
       <Text>{'\n'}</Text>
-      <Pressable lightColor="black" darkColor="white" style={styles.button} onPress={reflip}>
+      <TouchableOpacity lightColor="black" darkColor="white" style={styles.button} onPress={reflip}>
         <Text lightColor="white" darkColor="black" style={styles.text}>Reflip coin</Text>
-      </Pressable>
+      </TouchableOpacity>
       <Text>{'\n'}</Text>
       <View style={styles.circle}>
         <Text style={styles.coinText}>{randomSide}</Text>
