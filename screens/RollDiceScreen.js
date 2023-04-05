@@ -14,11 +14,13 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Roll Dice</Text>
-      <Text>The dice rolled {randomNumber}</Text>
       <Button
         title="Reroll dice"
         onPress={reroll}
       />
+      <View style={styles.square}>
+        <Text style={styles.diceNumber}>{randomNumber}</Text>
+      </View>
     </View>
   );
 }
@@ -33,4 +35,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
+  square: {
+    height: '50%',
+    backgroundColor: 'skyblue',
+    aspectRatio: 1,
+    borderRadius: '20%',
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  diceNumber: {
+    fontSize: 100,
+  }
 });

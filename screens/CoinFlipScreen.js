@@ -15,11 +15,13 @@ export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Flip Coin</Text>
-      <Text>The coil flipped {randomSide}</Text>
       <Button
         title="Reflip coin"
         onPress={reflip}
       />
+      <View style={styles.circle}>
+        <Text style={styles.coinText}>{randomSide}</Text>
+      </View>
     </View>
   );
 }
@@ -34,4 +36,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
+  circle: {
+    height: '50%',
+    backgroundColor: 'skyblue',
+    aspectRatio: 1,
+    borderRadius: '50%',
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  coinText: {
+    fontSize: 75,
+  }
 });
