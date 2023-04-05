@@ -1,8 +1,7 @@
 import { StyleSheet } from "react-native";
 
-import { Text, View } from "../components/Themed";
+import { Text, View, Pressable } from "../components/Themed";
 import { useState } from "react"
-import {Button} from 'react-native';
 
 export default function TabOneScreen() {
   const first_random_number = Math.floor(Math.random() * 6) + 1;
@@ -13,11 +12,12 @@ export default function TabOneScreen() {
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Roll Dice</Text>
-      <Button
-        title="Reroll dice"
-        onPress={reroll}
-      />
+      <Text style={styles.title}>Roll a Dice</Text>
+      <Text>{'\n'}</Text>
+      <Pressable lightColor="black" darkColor="white" style={styles.button} onPress={reroll}>
+        <Text lightColor="white" darkColor="black" style={styles.text}>Reroll dice</Text>
+      </Pressable>
+      <Text>{'\n'}</Text>
       <View style={styles.square}>
         <Text style={styles.diceNumber}>{randomNumber}</Text>
       </View>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: 20,
+    fontSize: 40,
     fontWeight: "bold",
   },
   square: {
@@ -45,5 +45,19 @@ const styles = StyleSheet.create({
   },
   diceNumber: {
     fontSize: 100,
-  }
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+  },
 });

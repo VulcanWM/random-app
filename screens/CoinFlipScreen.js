@@ -1,8 +1,7 @@
 import { StyleSheet } from "react-native";
 
-import { Text, View } from "../components/Themed";
+import { Text, View, Pressable } from "../components/Themed";
 import { useState } from "react"
-import {Button} from "react-native"
 
 export default function TabTwoScreen() {
   const sides = ['heads', 'tails']
@@ -14,11 +13,12 @@ export default function TabTwoScreen() {
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Flip Coin</Text>
-      <Button
-        title="Reflip coin"
-        onPress={reflip}
-      />
+      <Text style={styles.title}>Flip a Coin</Text>
+      <Text>{'\n'}</Text>
+      <Pressable lightColor="black" darkColor="white" style={styles.button} onPress={reflip}>
+        <Text lightColor="white" darkColor="black" style={styles.text}>Reflip coin</Text>
+      </Pressable>
+      <Text>{'\n'}</Text>
       <View style={styles.circle}>
         <Text style={styles.coinText}>{randomSide}</Text>
       </View>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: 20,
+    fontSize: 40,
     fontWeight: "bold",
   },
   circle: {
@@ -46,5 +46,19 @@ const styles = StyleSheet.create({
   },
   coinText: {
     fontSize: 75,
-  }
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+  },
 });

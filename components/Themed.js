@@ -3,7 +3,8 @@
 import {
   Text as DefaultText,
   useColorScheme,
-  View as DefaultView,
+  View as DefaultView, 
+  Pressable as DefaultPressable
 } from "react-native";
 
 import Colors from "../constants/Colors";
@@ -34,4 +35,14 @@ export function View(props) {
   );
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
+}
+
+export function Pressable(props) {
+  const { style, lightColor, darkColor, ...otherProps } = props;
+  const backgroundColor = useThemeColor(
+    { light: lightColor, dark: darkColor },
+    "background"
+  );
+
+  return <DefaultPressable style={[{ backgroundColor }, style]} {...otherProps} />;
 }
