@@ -6,8 +6,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useColorScheme } from "react-native";
 
 import Colors from "../constants/Colors";
-import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
+import RollDiceScreen from "../screens/RollDiceScreen";
+import CoinFlipScreen from "../screens/CoinFlipScreen";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -16,12 +16,12 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="RollDice"
       screenOptions={{ tabBarActiveTintColor: Colors[colorScheme].tint }}
     >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="RollDice"
+        component={RollDiceNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (
@@ -30,8 +30,8 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="CoinFlip"
+        component={CoinFlipNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (
@@ -51,30 +51,30 @@ function TabBarIcon(props) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator();
+const RollDiceStack = createStackNavigator();
 
-function TabOneNavigator() {
+function RollDiceNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: "Tab One Title" }}
+    <RollDiceStack.Navigator>
+      <RollDiceStack.Screen
+        name="RollDiceScreen"
+        component={RollDiceScreen}
+        options={{ headerTitle: "Roll Dice" }}
       />
-    </TabOneStack.Navigator>
+    </RollDiceStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator();
+const CoinFlipStack = createStackNavigator();
 
-function TabTwoNavigator() {
+function CoinFlipNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: "Tab Two Title" }}
+    <CoinFlipStack.Navigator>
+      <CoinFlipStack.Screen
+        name="CoinFlipScreen"
+        component={CoinFlipScreen}
+        options={{ headerTitle: "Coin Flip" }}
       />
-    </TabTwoStack.Navigator>
+    </CoinFlipStack.Navigator>
   );
 }

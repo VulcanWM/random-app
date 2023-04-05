@@ -11,14 +11,14 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          RollDice: {
             screens: {
-              TabOneScreen: "one",
+              RollDiceScreen: "rolldice",
             },
           },
-          TabTwo: {
+          CoinFlip: {
             screens: {
-              TabTwoScreen: "two",
+              CoinFlipScreen: "coinflip",
             },
           },
         },
