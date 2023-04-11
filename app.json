@@ -1,7 +1,9 @@
 {
   "expo": {
-    "name": "myreactapp",
-    "slug": "expo-template-tabs",
+    "name": "Random App",
+    "slug": "random-app",
+    "description": "An app where you can roll a dice and flip a coin",
+    "githubUrl": "https://github.com/VulcanWM/random-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
